@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.cards{
+    width: 500px;
+    height: 100%;
+    background: #21092F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 37px;
+    
+}

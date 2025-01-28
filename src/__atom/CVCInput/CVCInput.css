@@ -1,0 +1,38 @@
+.CVC_inp{
+    width: 191px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid var(--Light-Grey, #DFDEE0);
+    background: var(--White, #FFF);
+}
+.cvc_div{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 40px;
+}
+.txt_cvc{
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Space Grotesk";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.CVC_inp{
+    border-radius: 8px;
+    border: 1px solid var(--Gradient, #6348FE);
+    background: var(--White, #FFF);
+    outline: none;
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left:16px ;
+}

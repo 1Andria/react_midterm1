@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.num_div{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-bottom: 26px;
+}
+.card_nm{
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Space Grotesk";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.number_inp{
+    width: 381px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid var(--Light-Grey, #DFDEE0);
+    background: var(--White, #FFF);
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 16px;
+}
+.number_inp:focus{
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid var(--Gradient, #6348FE);
+    background: var(--White, #FFF);
+}
