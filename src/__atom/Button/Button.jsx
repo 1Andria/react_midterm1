@@ -1,6 +1,10 @@
 import React from "react";
 import "./Button.css";
-function Button() {
-  return <button className="btn">Confirm</button>;
+function Button({ txt, onClick }) {
+  return (
+    <button onClick={onClick} className="btn" type="submit">
+      {txt}
+    </button>
+  );
 }
 export default Button;

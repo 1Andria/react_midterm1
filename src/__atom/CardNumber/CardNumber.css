@@ -34,6 +34,11 @@
     line-height: normal;
     padding-left: 16px;
 }
+.number_error_border{
+    border-radius: 8px;
+    border: 1px solid var(--Red, #FF5050);
+    background: var(--White, #FFF);
+}
 .number_inp:focus{
     outline: none;
     border-radius: 8px;

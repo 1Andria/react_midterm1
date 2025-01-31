@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./NameInput.css";
-function NameInput({ change }) {
+function NameInput({ change, valid, isSubmitted }) {
   return (
     <div className="name_div">
       <label htmlFor="name" className="cardholder">
@@ -9,12 +9,15 @@ function NameInput({ change }) {
       <input
         id="name"
         type="text"
-        className="name_inp"
+        className={`name_inp ${isSubmitted && !valid ? "error_border" : ""}`}
         placeholder="e.g. Jane Appleseed"
         name="name"
         onChange={change}
         maxLength={22}
       />
+      {isSubmitted && !valid && (
+        <h1 className="nameError">wrong format English letters only</h1>
+      )}
     </div>
   );
 }

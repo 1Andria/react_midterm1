@@ -1,0 +1,30 @@
+.thank{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.thank_you{
+    color: var(--Deep-Violet, #21092F);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Space Grotesk";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 3.422px;
+    margin-top: 20px;
+}
+.thank_para{
+    color: var(--Purplish-Grey, #8F8694);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 48px;
+}

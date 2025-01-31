@@ -2,6 +2,9 @@
     box-sizing: border-box;
     margin: 0;
 }
+
+
+
 .front_side{
     width: 447px;
     height: 245px;
@@ -15,6 +18,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: url(../../assets/Images/card_color.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
 
 }
 .circles{
