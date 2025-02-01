@@ -1,3 +1,8 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .cvc_inp{
     border-radius: 8px;
     border: 1px solid var(--Gradient, #6348FE);

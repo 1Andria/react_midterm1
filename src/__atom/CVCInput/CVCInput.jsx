@@ -1,6 +1,6 @@
 import React from "react";
 import "./CVCInput.css";
-function CVCInput({ change, valid, isSubmitted }) {
+function CVCInput({ change, valid, isSubmitted, setTouched }) {
   return (
     <div className="cvc_div">
       <label htmlFor="cvc" className="txt_cvc">
@@ -13,6 +13,7 @@ function CVCInput({ change, valid, isSubmitted }) {
         id="cvc"
         name="cvc"
         onChange={change}
+        onFocus={() => setTouched()}
       />
       {isSubmitted && !valid && <h1 className="nameError">Invalid CVC</h1>}
     </div>

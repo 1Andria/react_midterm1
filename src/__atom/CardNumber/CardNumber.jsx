@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import "./CardNumber.css";
 import InputMask from "react-input-mask";
 
-function CardNumber({ change, valid, isSubmitted }) {
+function CardNumber({ change, valid, isSubmitted, setTouched }) {
+  const numberRef = useRef(null);
   return (
     <div className="num_div">
       <label htmlFor="card_num" className="card_nm">
@@ -11,6 +13,10 @@ function CardNumber({ change, valid, isSubmitted }) {
         mask="9999 9999 9999 9999"
         replacement={{ 9: /\d/ }}
         onChange={(e) => change(e)}
+        ref={numberRef}
+        onFocus={() => {
+          setTouched();
+        }}
       >
         {(inputProps) => (
           <input

@@ -10,6 +10,13 @@ import Thank from "../Thank/Thank";
 function Informational({ cardData, setCardData, change }) {
   const [passed, setPassed] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [touched, setTouched] = useState({
+    name: false,
+    cardNumber: false,
+    expMM: false,
+    expYr: false,
+    cvc: false,
+  });
   const [validations, setValidations] = useState({
     name: true,
     cardNumber: true,
@@ -23,13 +30,20 @@ function Informational({ cardData, setCardData, change }) {
     setIsSubmitted(true);
 
     const nameValid =
-      cardData.name.trim() !== "" && /^[a-zA-Z\s]+$/.test(cardData.name);
-    const cardNumberValid = /^\d{16}$/.test(cardData.number.replace(/\s/g, ""));
+      touched.name &&
+      cardData.name.trim() !== "" &&
+      /^[a-zA-Z\s]+$/.test(cardData.name);
+    const cardNumberValid =
+      touched.cardNumber && /^\d{16}$/.test(cardData.number.replace(/\s/g, ""));
     const expMMValid =
-      /^\d+$/.test(cardData.expMM) && cardData.expMM.length === 2;
+      touched.expMM &&
+      /^\d+$/.test(cardData.expMM) &&
+      cardData.expMM.length === 2;
     const expYrValid =
-      /^\d+$/.test(cardData.expYr) && cardData.expYr.length === 2;
-    const cvcValid = /^\d{3}$/.test(cardData.cvc);
+      touched.expYr &&
+      /^\d+$/.test(cardData.expYr) &&
+      cardData.expYr.length === 2;
+    const cvcValid = touched.cvc && /^\d{3}$/.test(cardData.cvc);
 
     setValidations({
       name: nameValid,
@@ -44,6 +58,16 @@ function Informational({ cardData, setCardData, change }) {
     }
   }
 
+  function IsEmpty(...inputName) {
+    setTouched((oldCondition) => {
+      const newCondition = { ...oldCondition };
+      inputName.forEach((inputName) => {
+        newCondition[inputName] = true;
+      });
+      return newCondition;
+    });
+  }
+
   return (
     <div className="info_div">
       {passed ? (
@@ -56,11 +80,13 @@ function Informational({ cardData, setCardData, change }) {
             change={change}
             isSubmitted={isSubmitted}
             valid={validations.name}
+            setTouched={() => IsEmpty("name")}
           />
           <CardNumber
             change={change}
             isSubmitted={isSubmitted}
             valid={validations.cardNumber}
+            setTouched={() => IsEmpty("cardNumber")}
           />
           <div className="exp">
             <ExpDate
@@ -69,11 +95,13 @@ function Informational({ cardData, setCardData, change }) {
               valid={validations.expMM && validations.expYr}
               validMM={validations.expMM}
               validYr={validations.expYr}
+              setTouched={() => IsEmpty("expMM", "expYr")}
             />
             <CVCInput
               change={change}
               isSubmitted={isSubmitted}
               valid={validations.cvc}
+              setTouched={() => IsEmpty("cvc")}
             />
           </div>
           <Button txt="Confirm" />

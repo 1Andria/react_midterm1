@@ -1,6 +1,6 @@
 import React from "react";
 import "./ExpDate.css";
-function ExpDate({ change, isSubmitted, validMM, validYr }) {
+function ExpDate({ change, isSubmitted, validMM, validYr, setTouched }) {
   return (
     <div className="month_year">
       <label className="exp_m_y" htmlFor="exp">
@@ -18,6 +18,9 @@ function ExpDate({ change, isSubmitted, validMM, validYr }) {
           id="exp"
           max={12}
           min={10}
+          onFocus={() => {
+            setTouched("expMM");
+          }}
         />
         <input
           className={`mm_yy ${
@@ -29,6 +32,10 @@ function ExpDate({ change, isSubmitted, validMM, validYr }) {
           name="expYr"
           max={99}
           min={10}
+          onFocus={() => {
+            setTouched("expYr");
+          }}
+          inputMode="numeric"
         />
       </div>
       {(isSubmitted && !validYr) || (isSubmitted && !validMM) ? (
