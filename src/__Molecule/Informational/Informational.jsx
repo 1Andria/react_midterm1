@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Informational.css";
 import NameInput from "../../__atom/Name/NameInput";
 import CardNumber from "../../__atom/CardNumber/CardNumber";
@@ -10,6 +10,7 @@ import Thank from "../Thank/Thank";
 function Informational({ cardData, setCardData, change }) {
   const [passed, setPassed] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showThank, setShowThank] = useState(false);
   const [touched, setTouched] = useState({
     name: false,
     cardNumber: false,
@@ -60,6 +61,12 @@ function Informational({ cardData, setCardData, change }) {
     }
   }
 
+  useEffect(() => {
+    if (passed) {
+      setShowThank(true);
+    }
+  });
+
   function IsEmpty(...inputName) {
     setTouched((oldCondition) => {
       const newCondition = { ...oldCondition };
@@ -72,13 +79,11 @@ function Informational({ cardData, setCardData, change }) {
 
   return (
     <div className="info_div">
-      {passed ? (
+      {showThank ? (
         <Thank />
       ) : (
         <form className="form" onSubmit={PassValidations}>
           <NameInput
-            cardData={cardData}
-            setCardData={setCardData}
             change={change}
             isSubmitted={isSubmitted}
             valid={validations.name}
