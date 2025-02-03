@@ -45,9 +45,18 @@
 }
 @media (max-width:1250px) {
     .back_side{
-       
+        width: 400px;
+        height: 200px;
         margin-right: 0px;
         margin-left: 0px;
+    }
+    .CVC_div{
+        width: 330.975px;
+        height: 30.739px;
+        margin-bottom: 20px;
+    }
+    .line{
+        height:36.6px ;
     }
 }
 @media (max-width:678px) {

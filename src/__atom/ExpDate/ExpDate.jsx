@@ -11,31 +11,28 @@ function ExpDate({ change, isSubmitted, validMM, validYr, setTouched }) {
           className={`mm_yy ${
             isSubmitted && !validMM ? "error_date_border" : ""
           }`}
-          type="number"
+          type="text"
           placeholder="MM"
           onChange={change}
           name="expMM"
           id="exp"
-          max={12}
-          min={10}
           onFocus={() => {
             setTouched("expMM");
           }}
+          maxLength={2}
         />
         <input
           className={`mm_yy ${
             isSubmitted && !validYr ? "error_date_border" : ""
           }`}
-          type="number"
+          type="text"
           placeholder="YY"
           onChange={change}
           name="expYr"
-          max={99}
-          min={10}
           onFocus={() => {
             setTouched("expYr");
           }}
-          inputMode="numeric"
+          maxLength={2}
         />
       </div>
       {(isSubmitted && !validYr) || (isSubmitted && !validMM) ? (

@@ -38,11 +38,13 @@ function Informational({ cardData, setCardData, change }) {
     const expMMValid =
       touched.expMM &&
       /^\d+$/.test(cardData.expMM) &&
-      cardData.expMM.length === 2;
+      cardData.expMM.length === 2 &&
+      cardData.expMM <= 12;
     const expYrValid =
       touched.expYr &&
       /^\d+$/.test(cardData.expYr) &&
-      cardData.expYr.length === 2;
+      cardData.expYr.length === 2 &&
+      cardData.expYr >= 25;
     const cvcValid = touched.cvc && /^\d{3}$/.test(cardData.cvc);
 
     setValidations({

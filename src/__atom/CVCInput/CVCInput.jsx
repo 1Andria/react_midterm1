@@ -7,13 +7,14 @@ function CVCInput({ change, valid, isSubmitted, setTouched }) {
         CVC
       </label>
       <input
-        type="number"
+        type="text"
         className={`cvc_inp ${isSubmitted && !valid ? "cvc_inp_err" : ""}`}
         placeholder="e.g. 123"
         id="cvc"
         name="cvc"
         onChange={change}
         onFocus={() => setTouched()}
+        maxLength={3}
       />
       {isSubmitted && !valid && <h1 className="nameError">Invalid CVC</h1>}
     </div>

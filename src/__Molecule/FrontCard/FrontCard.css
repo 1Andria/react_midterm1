@@ -67,10 +67,32 @@
 }
 @media (max-width:1250px) {
     .front_side{
+        width: 400px;
+        height: 200px;
         margin-right: 0px;
         position: absolute;
-        top: 210px;
+        top: 150px;
         margin-right: 200px;
+    }
+    .numb{
+        color: var(--White, #FFF);
+        font-family: "Space Grotesk";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 2.2px;
+    }
+    .name{
+        font-size: 12px;
+    }
+    .white{
+        width: 33px;
+        height: 33px;
+    }
+    .border{
+            width: 16.5px;
+            height: 16.5px;
     }
 }
 @media (max-width:678px) {
