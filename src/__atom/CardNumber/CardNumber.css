@@ -50,3 +50,9 @@ input::-webkit-inner-spin-button {
     border: 1px solid var(--Gradient, #6348FE);
     background: var(--White, #FFF);
 }
+@media (max-width:678px) {
+    .number_inp{
+        width: 327px;
+        height: 45px;
+    }
+}

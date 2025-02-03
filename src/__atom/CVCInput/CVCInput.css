@@ -5,7 +5,7 @@ input::-webkit-inner-spin-button {
 }
 .cvc_inp{
     border-radius: 8px;
-    border: 1px solid var(--Gradient, #6348FE);
+    border: 1px solid var(--Light-Grey, #DFDEE0);
     background: var(--White, #FFF);
     outline: none;
     color: var(--Deep-Violet, #21092F);
@@ -19,6 +19,10 @@ input::-webkit-inner-spin-button {
     width: 191px;
     height: 45px;
     
+}
+.cvc_inp:focus{
+    border: 1px solid var(--Gradient, #6348FE);
+
 }
 .cvc_inp_err{
     border-radius: 8px;
@@ -41,4 +45,10 @@ input::-webkit-inner-spin-button {
     line-height: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+@media (max-width:678px) {
+    .cvc_inp{
+        width: 164px;
+        height: 45px;
+    }
 }

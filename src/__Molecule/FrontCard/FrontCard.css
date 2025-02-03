@@ -2,11 +2,9 @@
     box-sizing: border-box;
     margin: 0;
 }
-
-
-
 .front_side{
-    width: 447px;
+    max-width: 447px;
+    width: 100%;
     height: 245px;
     border-radius: 10px;
     background: linear-gradient(164deg, #6348FE 4.74%, #610595 88.83%);
@@ -66,4 +64,43 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+@media (max-width:1250px) {
+    .front_side{
+        margin-right: 0px;
+        position: absolute;
+        top: 210px;
+        margin-right: 200px;
+    }
+}
+@media (max-width:678px) {
+    .front_side{
+        width: 286px;
+        height: 157px;
+        padding: 17px 27px 20px 19px;
+        top: 140px;
+        margin-right: 65px;
+        z-index: 1;
+    }
+    .numb{
+        color: var(--White, #FFF);
+        font-family: "Space Grotesk";
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 2.2px;
+    }
+    .name{
+        font-size: 9px;
+    }
+    .white{
+        width: 30px;
+        height: 30px;
+    }
+    .border{
+            width: 13.5px;
+            height: 13.5px;
+    }
+    
 }

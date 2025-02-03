@@ -8,7 +8,7 @@ function BackCard({ cardData }) {
       <div className="CVC_div">
         <h1 className="cvc">{cardData.cvc}</h1>
       </div>
-      <img src={Info} alt="information" />
+      <img className="writes" src={Info} alt="information" />
     </div>
   );
 }

@@ -12,3 +12,9 @@
     font-weight: 500;
     line-height: normal;
 }
+@media (max-width:678px) {
+    .btn{
+        width: 327px;
+        height: 53px;
+    }
+}
